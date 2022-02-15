@@ -4,7 +4,7 @@
 
 Projekt ma być grą przeglądarkową, hazardową z różnymi grami, gra będzie posiadać własną walutę, będzie można ją zdobyć poprzez granie w “clickera” lub z gier hazardowych
 
-###WYMAGANIA FUNKCJONALNE
+### WYMAGANIA FUNKCJONALNE
 
 + Użytkownik będzie mógł się załóżyć konto w module “logowanie”:
     * Pole gdzie użytkownik będzie mógł wpisać E-mail
