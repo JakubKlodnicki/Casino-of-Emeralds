@@ -2,14 +2,14 @@
 
 ### WYMAGANIA BIZNESOWE
 
-Projekt ma być grą przeglądarkową, hazardową z różnymi grami, gra będzie posiadać własną walutę, będzie można ją zdobyć poprzez granie w “clickera” lub z gier hazardowych
+Projekt ma być grą przeglądarkową, hazardową z różnymi grami, gra będzie posiadać własną walutę, będzie można ją zdobyć poprzez granie w “clicker” lub z gier hazardowych
 
-###WYMAGANIA FUNKCJONALNE
+### WYMAGANIA FUNKCJONALNE
 
-+ Użytkownik będzie mógł się załóżyć konto w module “logowanie”:
++ Użytkownik będzie mógł się załóżyć konto w module “login”:
     * Pole gdzie użytkownik będzie mógł wpisać E-mail
     * Pole gdzie bedzie mozna wpisac Hasło
-    * Przycisk “Zarejestruj”
+    * Przycisk “Register"
 
 + Projekt będzie posiadał grę o nazwie “clicker” a w niej funkcje:
 	* Pole na którym będzie można klikać aby zdobywać walute
