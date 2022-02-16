@@ -1,0 +1,23 @@
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(78, 77, 77);
+}
+.page-header ul {
+    align-items: center;
+    list-style: none;
+    display: flex;
+    margin-top: auto;
+}
+.page-header ul li {
+    padding-left: 20px;
+    padding-right:20px ;
+    color: white;
+}
+.card {
+    height: 200px;
+}
+.fa-github {
+    padding-right: 5px;
+}
