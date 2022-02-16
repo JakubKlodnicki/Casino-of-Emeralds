@@ -39,13 +39,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Zrzut danych tabeli `users`
---
-
-INSERT INTO `users` (`user_id`, `user_email`, `user_login`, `user_password`, `user_activate`, `user_wallet`, `user_role`) VALUES
-(1, 'dobra@gmail.com', 'dobra', 'gogol', NULL, 200, 'user');
-
---
 -- Indeksy dla zrzutów tabel
 --
 
