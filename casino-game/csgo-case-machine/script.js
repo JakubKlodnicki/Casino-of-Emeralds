@@ -13,44 +13,44 @@ var img = {
 }
 
 function reset(){
-  $('.card').remove();
+  $('.cardd').remove();
   for (var i = 0; i < 210; i++){
-    var element = '<div class="card" style="background-color: lightblue;" data-name="P250 | Valence" id=itemNumber'+i+'>'+img.blue+'</div>';
+    var element = '<div class="cardd" style="background-color: lightblue;" data-name="P250 | Valence" id=itemNumber'+i+'>'+img.blue+'</div>';
     var rand = random(1,10000)/100;
     if (rand < 50){
-      element = '<div class="card" style="background-color: lightblue;" data-name="USP-S | Blueprint" id=itemNumber'+i+'>'+img.blue2+'</div>';
+      element = '<div class="cardd" style="background-color: lightblue;" data-name="USP-S | Blueprint" id=itemNumber'+i+'>'+img.blue2+'</div>';
     }
     if (rand < 20){
-      element = '<div class="card" style="background-color: purple;" data-name="Desert Eagle | Night" id=itemNumber'+i+'>'+img.purple+'</div>';
+      element = '<div class="cardd" style="background-color: purple;" data-name="Desert Eagle | Night" id=itemNumber'+i+'>'+img.purple+'</div>';
     }
     if (rand < 20){
-      element = '<div class="card" style="background-color: purple;" data-name="AWP | PAW" id=itemNumber'+i+'>'+img.purple2+'</div>';
+      element = '<div class="cardd" style="background-color: purple;" data-name="AWP | PAW" id=itemNumber'+i+'>'+img.purple2+'</div>';
     }
     if (rand < 5){
-      element = '<div class="card" style="background-color: hotpink;" data-name="AK-47 | Frontside Misty" id=itemNumber'+i+'>'+img.pink+'</div>';
+      element = '<div class="cardd" style="background-color: hotpink;" data-name="AK-47 | Frontside Misty" id=itemNumber'+i+'>'+img.pink+'</div>';
     }
     if (rand < 5){
-      element = '<div class="card" style="background-color: hotpink;" data-name="Glock-18 | Bullet Queen" id=itemNumber'+i+'>'+img.pink2+'</div>';
+      element = '<div class="cardd" style="background-color: hotpink;" data-name="Glock-18 | Bullet Queen" id=itemNumber'+i+'>'+img.pink2+'</div>';
     }
     if (rand < 2){
-      element = '<div class="card" style="background-color: red;" data-name="M4A1-S | Hyper Beast" id=itemNumber'+i+'>'+img.red+'</div>';
+      element = '<div class="cardd" style="background-color: red;" data-name="M4A1-S | Hyper Beast" id=itemNumber'+i+'>'+img.red+'</div>';
     }
     if (rand < 2){
-      element = '<div class="card" style="background-color: red2;" data-name="M4A4 | Neo-Noir" id=itemNumber'+i+'>'+img.red2+'</div>';
+      element = '<div class="cardd" style="background-color: red2;" data-name="M4A4 | Neo-Noir" id=itemNumber'+i+'>'+img.red2+'</div>';
     }
     if (rand < 0.5){
-      element = '<div class="card" style="background-color: yellow;" data-name="M9 Bayonet | Tiger Tooth" id=itemNumber'+i+'>'+img.yellow+'</div>';
+      element = '<div class="cardd" style="background-color: yellow;" data-name="M9 Bayonet | Tiger Tooth" id=itemNumber'+i+'>'+img.yellow+'</div>';
     }
     if (rand < 0.5){
-      element = '<div class="card" style="background-color: yellow;" data-name="Butterfly Knife | Doppler" id=itemNumber'+i+'>'+img.yellow2+'</div>';
+      element = '<div class="cardd" style="background-color: yellow;" data-name="Butterfly Knife | Doppler" id=itemNumber'+i+'>'+img.yellow2+'</div>';
     }
     if (rand < 0.5){
-      element = '<div class="card" style="background-color: yellow;" data-name="Skeleton Knife | Slaughter" id=itemNumber'+i+'>'+img.yellow3+'</div>';
+      element = '<div class="cardd" style="background-color: yellow;" data-name="Skeleton Knife | Slaughter" id=itemNumber'+i+'>'+img.yellow3+'</div>';
     }
 
-    $('#cardList').append(element);
+    $('#cardListt').append(element);
   }
-  $('.card').first().css('margin-left',-1000);
+  $('.cardd').first().css('margin-left',-1000);
 }
 
 function openCase(){
@@ -61,7 +61,7 @@ function openCase(){
   var timing = timings[random(0,timings.length)];
   var reward = $('#itemNumber'+childNumber).attr('data-name');
   
-  $('.card').first().animate({
+  $('.cardd').first().animate({
     marginLeft: -rand
   }, 5000, timing, function(){
     
