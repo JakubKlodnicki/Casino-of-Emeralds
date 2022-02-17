@@ -14,7 +14,7 @@ var img = {
 function reset(){
   $('.cardd').remove();
   for (var i = 0; i < 210; i++){
-    var element = '<div class="cardd" style="background-color: lightblue;" data-name="P250 | Valence" id=itemNumber'+i+'>'+img.blue+'</div>';
+    var element = '<div class="cardd" style="background-color: lightblue;" data-name="USP-S | Blueprint" id=itemNumber'+i+'>'+img.blue+'</div>';
     var rand = random(1,10000)/100;
     if (rand < 20){
       element = '<div class="cardd" style="background-color: purple;" data-name="Desert Eagle | Night" id=itemNumber'+i+'>'+img.purple+'</div>';

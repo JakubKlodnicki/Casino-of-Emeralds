@@ -15,6 +15,7 @@ body {
   border: 2px solid red;
   overflow: hidden;
   white-space: nowrap;
+  border-radius: 5px;
 }
 
 .col-md-2 img {
@@ -24,6 +25,13 @@ body {
 .col-md-2 {
   display: flex;
   justify-content: center;
+}
+
+.col-md-2 .text {
+  margin-top: auto;
+  color: white;
+  font-size: 1px;
+  text-align: right;
 }
 
 .cardd {
