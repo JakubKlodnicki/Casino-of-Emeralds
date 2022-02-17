@@ -1,16 +1,26 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Logged</title>
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
 </head>
 <body>
-<button><a href="./login.html">Search again</a></button>
-<br>
-<?PHP
+  <form action="login-auth.php" method="post">
+    Login: <input type="text" name="login" value="" />
+    Password: <input type="password" name="password" value="" />
 
-  $login = $_POST['login'];
-  $password = $_POST['password'];
-  echo shell_exec("python3 /var/www/html/ok/py/pconnect.py '$login $password'");
+    <input type="submit" name="submit" value="Submit" />
+</form>
+<br>
+
+<?php
+if(!empty($_GET['err'])) {
+    echo  "<p style='color: red;'>Incorrect login or password</p>";
+}
 ?>
+<a href="./registration.php">Registration</a>
+
 </body>
 </html>
