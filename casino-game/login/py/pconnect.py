@@ -6,6 +6,8 @@ for i in range(len(a)):
     f = a[i]
     f = f.split()
     break
+if len(f) != 2:
+   print('<script>window.location.href = "./login.php?err=1"</script>')
 login = '"' + f[0]
 login = login + '"'
 password = f[1]
@@ -20,6 +22,10 @@ cnx = mysql.connector.connect(user='***', passwd='***',
 mycursor = cnx.cursor();
 mycursor.execute(srch)
 result = mycursor.fetchall()
-for i in range(len(result)):
-    print(*result[i])
+if result:
+   print('<button><a href="./login.php">Log out</a></button><br>')
+   for i in range(len(result)):
+      print(*result[i])
+else:
+   print('<script>window.location.href = "./login.php?err=1"</script>')
 cnx.close()
