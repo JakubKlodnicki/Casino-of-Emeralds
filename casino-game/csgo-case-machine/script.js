@@ -16,31 +16,31 @@ function reset(){
   for (var i = 0; i < 210; i++){
     var element = '<div class="cardd" style="background-color: lightblue;" data-name="USP-S | Blueprint" id=itemNumber'+i+'>'+img.blue+'</div>';
     var rand = random(1,10000)/100;
-    if (rand < 20){
+    if (rand < 23){
       element = '<div class="cardd" style="background-color: purple;" data-name="Desert Eagle | Night" id=itemNumber'+i+'>'+img.purple+'</div>';
     }
-    if (rand < 20){
+    if (rand < 23){
       element = '<div class="cardd" style="background-color: purple;" data-name="AWP | PAW" id=itemNumber'+i+'>'+img.purple2+'</div>';
     }
-    if (rand < 5){
+    if (rand < 8){
       element = '<div class="cardd" style="background-color: hotpink;" data-name="AK-47 | Frontside Misty" id=itemNumber'+i+'>'+img.pink+'</div>';
     }
-    if (rand < 5){
+    if (rand < 8){
       element = '<div class="cardd" style="background-color: hotpink;" data-name="Glock-18 | Bullet Queen" id=itemNumber'+i+'>'+img.pink2+'</div>';
     }
-    if (rand < 2){
+    if (rand < 5){
       element = '<div class="cardd" style="background-color: red;" data-name="M4A1-S | Hyper Beast" id=itemNumber'+i+'>'+img.red+'</div>';
     }
-    if (rand < 2){
+    if (rand < 5){
       element = '<div class="cardd" style="background-color: red2;" data-name="M4A4 | Neo-Noir" id=itemNumber'+i+'>'+img.red2+'</div>';
     }
-    if (rand < 0.5){
+    if (rand < 2){
       element = '<div class="cardd" style="background-color: yellow;" data-name="M9 Bayonet | Tiger Tooth" id=itemNumber'+i+'>'+img.yellow+'</div>';
     }
-    if (rand < 0.5){
+    if (rand < 2){
       element = '<div class="cardd" style="background-color: yellow;" data-name="Butterfly Knife | Doppler" id=itemNumber'+i+'>'+img.yellow2+'</div>';
     }
-    if (rand < 0.5){
+    if (rand < 2){
       element = '<div class="cardd" style="background-color: yellow;" data-name="Skeleton Knife | Slaughter" id=itemNumber'+i+'>'+img.yellow3+'</div>';
     }
 
