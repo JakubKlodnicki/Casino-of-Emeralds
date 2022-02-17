@@ -17,6 +17,10 @@ body {
   white-space: nowrap;
 }
 
+img {
+  max-width: 100%;
+}
+
 .cardd {
   display: inline-block;
   background-color: red;
