@@ -9,15 +9,26 @@ body {
 }
 .wallet {
   padding-right:10px ;
+  margin-bottom: auto;
+  margin-top: auto;
+  border-radius: 5px;
+}
+.wallet .text {
+  padding-right:10px ;
+  margin-bottom: auto;
+  margin-top: auto;
+  border-radius: 5px;
 }
 .header-top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  -webkit-box-shadow: 0 8px 6px -6px rgb(5, 199, 5);
-  -moz-box-shadow: 0 8px 6px -6px rgb(5, 199, 5);
-  box-shadow: 0 8px 6px -6px rgb(5, 199, 5);
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem rgb(5, 199, 5),
+  0 0 0.8rem rgb(5, 199, 5),
+  0 0 2.8rem rgb(5, 199, 5),
+  inset 0 0 1.3rem rgb(5, 199, 5);
   color: white;
 }
 
@@ -34,10 +45,7 @@ body {
   padding-left: 13%;
   font-size: 30px;
 }
-.wallet {
-  margin-bottom: auto;
-  margin-top: auto;
-}
+
 .header-top-bar h2 {
   margin-top: auto;
   margin-bottom: auto;
@@ -73,16 +81,16 @@ body {
   height: 100px;
   width: 800px;
   position: relative;
-  border: 2px solid red;
+  border: 2px solid rgb(5, 199, 5);
   overflow: hidden;
   white-space: nowrap;
   border-radius: 5px;
   box-shadow: 0 0 .2rem #fff,
   0 0 .2rem #fff,
-  0 0 2rem #df0707,
-  0 0 0.8rem #df0707,
-  0 0 2.8rem #df0707,
-  inset 0 0 1.3rem #df0707; 
+  0 0 2rem rgb(5, 199, 5),
+  0 0 0.8rem rgb(5, 199, 5),
+  0 0 2.8rem rgb(5, 199, 5),
+  inset 0 0 1.3rem rgb(5, 199, 5);
   margin-top: 20px;
 }
 
@@ -161,10 +169,10 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 .2rem #fff,
   0 0 .2rem #fff,
-  0 0 2rem #df0707,
-  0 0 0.8rem #df0707,
-  0 0 2.8rem #df0707,
-  inset 0 0 1.3rem #df0707;
+  0 0 2rem rgb(5, 199, 5),
+  0 0 0.8rem rgb(5, 199, 5),
+  0 0 2.8rem rgb(5, 199, 5),
+  inset 0 0 1.3rem rgb(5, 199, 5);
   color: white;
 }
 .openn button:hover {
@@ -174,12 +182,12 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 .2rem #fff,
   0 0 .2rem #fff,
-  0 0 2rem #df0707,
-  0 0 0.8rem #df0707,
-  0 0 2.8rem #df0707,
-  0 0 3.8rem #df0707,
-  0 0 0.5rem #df0707,
-  inset 0 0 1.3rem #df0707;
+  0 0 2rem rgb(5, 199, 5),
+  0 0 0.8rem rgb(5, 199, 5),
+  0 0 2.8rem rgb(5, 199, 5),
+  0 0 3.8rem rgb(5, 199, 5),
+  0 0 0.5rem rgb(5, 199, 5),
+  inset 0 0 1.3rem rgb(5, 199, 5);
   transition: 1s;
 }
 
