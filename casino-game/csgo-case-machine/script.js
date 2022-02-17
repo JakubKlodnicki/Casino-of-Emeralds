@@ -72,7 +72,7 @@ function openCase(){
       draggable: false,
       width: 400,
       buttons: {
-        "%diamonds% diamonds ! !":function(){
+        "%emeralds% emeralds ! !":function(){
           $(this).dialog("close");
         }
       }
