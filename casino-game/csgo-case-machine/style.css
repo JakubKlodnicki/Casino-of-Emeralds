@@ -68,7 +68,8 @@ body {
 }
 
 [class*=col] {
-  background-color: yellowgreen;
   padding: 1rem;
   margin: 10px;
+  border: 2px solid red;
+  border-radius: 3px;
 }
