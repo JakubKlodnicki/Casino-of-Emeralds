@@ -1,4 +1,4 @@
-# Project "Hazard Game"
+# Project "Casino of Emeralds"
 
 ### BUSINESS REQUIREMENTS
 
