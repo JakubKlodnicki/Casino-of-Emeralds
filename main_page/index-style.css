@@ -22,7 +22,15 @@ ul {
     padding-right:20px ;
     font-size: 20px;
     color: white;
+}
+.ok {
+  display: flex;
+  justify-content: center;
 } 
+.ok img {
+  height: 400px;
+  
+}
 .fa-github {
     padding-right: 5px;
 }
