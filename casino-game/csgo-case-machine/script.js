@@ -1,16 +1,3 @@
-import { createServer } from 'http';
-
-const hostname = '127.0.0.1';
-const port = 3000;
-
-const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-});
-
-server.listen(port, hostname, () => {
-});
-
 var img = {
   blue: '<img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh-TLMbfEk3tD4ctlteXI8oTht1i1uRQ5fTz3JY-Qcg82MwrTq1C-xLvpgJK56J7LmnY3vSIq7XeLmRK000xLaORxxavJqBhIHi8/360fx360f"/>',
   purple: '<img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7ODHTjNL69Siq4yCkP_gDLfQhGxUppMlj7qQoNmg2wHj8xVvMGGhcIadIQ84Z1rSrAK8ku3r0ZPtu5XAmyN9-n515U3JtjU/360fx360f"/>',
