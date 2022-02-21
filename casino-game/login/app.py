@@ -7,7 +7,7 @@ import string
 from random import *
 
 app = Flask(__name__)
-app.secret_key = 'Blady2115polska-'
+app.secret_key = '***'
 
 def random_cd():
    characters = '0123456789'
@@ -20,7 +20,7 @@ def sentMail(m, message):
    msg['From'] = 'casinoofemeralds@gmail.com'
    msg['To'] = m
    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-   server.login('casinoofemeralds@gmail.com', 'blady2115polska')
+   server.login('casinoofemeralds@gmail.com', '***')
    server.sendmail('casinoofemeralds@gmail.com', m, msg.as_string())
    server.quit()
 
