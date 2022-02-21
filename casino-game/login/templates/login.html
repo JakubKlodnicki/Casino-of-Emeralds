@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+    <form action="/login" method="POST">
+        <p>Enter Username:</p>
+        <p><input type="text" name="username" /></p>
+        <p>Enter Password:</p>
+        <p><input type="password" name="password" /></p>
+
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+    <button><a href="/register">Register</a></button>
+    {% if session['aaa'] != '' %}
+    <h1 style="color: red">Incorrect username or password</h1>
+    {% endif %}
+    
+</body>
+</html>

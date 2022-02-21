@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+</head>
+<body>
+  <form action="/register" method="POST">
+    <p>Enter E-Mail:</p>
+    <p><input type="email" name="email" /></p>
+    <p>Enter Username:</p>
+    <p><input type="text" name="username" /></p>
+    <p>Enter Password:</p>
+    <p><input type="password" name="password" /></p>
+    <p><input type="submit" value="Submit" /></p>
+    {% if session['aaa'] != '' %}
+	<h1 style="color: red">E-Mail or Username already used</h1>
+    {% endif %}
+</form>
+</body>
+</html>
