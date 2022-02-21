@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Casino game</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css'>
+  <link rel="icon" href="https://github.com/JakubKlodnicki/Casino-of-Emeralds/blob/main/img/logo/logo-emerald.png?raw=true">
+</head>
+<body>
+  <!-- script.js -->
+  <script>
+    var img = {
+  blue: '<img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh-TLMbfEk3tD4ctlteXI8oTht1i1uRQ5fTz3JY-Qcg82MwrTq1C-xLvpgJK56J7LmnY3vSIq7XeLmRK000xLaORxxavJqBhIHi8/360fx360f"/>',
+  purple: '<img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7ODHTjNL69Siq4yCkP_gDLfQhGxUppMlj7qQoNmg2wHj8xVvMGGhcIadIQ84Z1rSrAK8ku3r0ZPtu5XAmyN9-n515U3JtjU/360fx360f"/>',
+  purple2: '<img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAZt7PLfYQJS7cumlZe0m_7zO6_ummpD78A_2u_HpN2giwfl-ENrMDrwJYSXdwU4MlzUq1jvlLjo0JC4vprOnSFisz5iuygXqnotbQ/360fx360f"/>',
+  pink: '<img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV08u_mpSOhcjnI7TDglRd4cJ5ntbN9J7yjRrj80Y9Y2GicdXBew84NQuGrAK4l-3nhpG_6smaznFlsyd343_czhPmn1gSOaDw15cN/360fx360f"/>',
+  pink2: '<img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79fnzL-cluX5MrLVk2Vu5Mx2gv3--Y3nj1H6r0plMm-lcNSRIQc6Z1GE-1e6wObt1JG46cmbmHo37yAn4HjfmUTmhAYMMLKVxXRrDQ/360fx360f"/>',
+  red: '<img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alDLPIhm5D18d0i_rVyoD8j1yglB89IT6mOoWUegM-aFvX_Fe_yO3q1Ja6vsnMn3Q163YntH6Lnxfh1UpFbrdng_SACQLJQIlmyYc/360fx360f"/>',
+  red2: '<img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwW09Kzm7-FmP7mDLfYkWNF18lwmO7Eu46l21aw_UpsYTrycIGUdldoYQqE_la3xLq80J7pupjKnSZiuHRxtnbD30vgpp1SOH0/360fx360f"/>',
+  yellow: '<img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-KmcjgOrzUhFRe-sR_jez--YXygECLpxIuNDztII_Bd1doM16E_Qe_xr29hcS_tJmbnHNnuyZz7HrenB2zgBlLarQ8gOveFwvcAFHlzA/360fx360f"/>',
+  yellow2: '<img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf0ebcZThQ6tCvq4GGqPP7I6vdk3lu-M1wmeySyoD8j1yglB89IT6mOo_GIQ82NFjS_1nol-ftg57pupqbmCAy7iUisXbYlxK-iU1IOuJuhaGACQLJIyTq34k/360fx360f"/>',
+  yellow3: '<img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJfwPjNfThW49KJlY20jfL2IbrummJW4NFOhujT8om73wO2r0tuYD37ctKVJwQ_MgrQ-FLrxuy705butZ2YmCZhvSci7XrZywv330_lrW6K0g/360fx360f"/>'
+}
+
+function reset(){
+  $('.cardd').remove();
+  for (var i = 0; i < 210; i++){
+    var element = '<div class="cardd" style="background-color: transparent;" data-name="USP-S | Blueprint" id=itemNumber'+i+'>'+img.blue+'</div>';
+    var rand = random(1,10000)/100;
+    if (rand < 30){
+      element = '<div class="cardd" style="background-color: transparent;" data-name="Desert Eagle | Night" id=itemNumber'+i+'>'+img.purple+'</div>';
+    }
+    if (rand < 30){
+      element = '<div class="cardd" style="background-color: transparent;" data-name="AWP | PAW" id=itemNumber'+i+'>'+img.purple2+'</div>';
+    }
+    if (rand < 25){
+      element = '<div class="cardd" style="background-color: transparent;" data-name="AK-47 | Frontside Misty" id=itemNumber'+i+'>'+img.pink+'</div>';
+    }
+    if (rand < 25){
+      element = '<div class="cardd" style="background-color: transparent;" data-name="Glock-18 | Bullet Queen" id=itemNumber'+i+'>'+img.pink2+'</div>';
+    }
+    if (rand < 25){
+      element = '<div class="cardd" style="background-color: transparent;" data-name="M4A1-S | Hyper Beast" id=itemNumber'+i+'>'+img.red+'</div>';
+    }
+    if (rand < 20){
+      element = '<div class="cardd" style="background-color: transparent;" data-name="M4A4 | Neo-Noir" id=itemNumber'+i+'>'+img.red2+'</div>';
+    }
+    if (rand < 20){
+      element = '<div class="cardd" style="background-color: transparent;" data-name="M9 Bayonet | Tiger Tooth" id=itemNumber'+i+'>'+img.yellow+'</div>';
+    }
+    if (rand < 19){
+      element = '<div class="cardd" style="background-color: transparent;" data-name="Butterfly Knife | Doppler" id=itemNumber'+i+'>'+img.yellow2+'</div>';
+    }
+    if (rand < 15){
+      element = '<div class="cardd" style="background-color: transparent;" data-name="Skeleton Knife | Slaughter" id=itemNumber'+i+'>'+img.yellow3+'</div>';
+    }
+
+    $('#cardListt').append(element);
+  }
+  $('.cardd').first().css('margin-left',-1000);
+}
+
+function openCase(){
+  reset();
+  var rand = random(1000,20000);
+  var childNumber = Math.floor(rand/100)+4;
+  var timings = ["easeInOutBack","easeOutExpo","easeInOutBounce","easeOutQuad","swing","easeOutElastic","easeInOutElastic"];
+  var timing = timings[random(0,timings.length)];
+  var reward = $('#itemNumber'+childNumber).attr('data-name');
+  
+  $('.cardd').first().animate({
+    marginLeft: -rand
+  }, 5000, timing, function(){
+    
+    var src = $('#itemNumber'+childNumber+' img').attr('src');
+    
+    $('#dialog-msg').html("You drop "+reward+""+"<br><img src="+src+">");
+    
+    $('#dialog').dialog({
+      modal: true,
+      title: "New drop!",
+      resizeable: false,
+      draggable: false,
+      width: 400,
+      buttons: {
+        "%emeralds% emeralds ! !":function(){
+          $(this).dialog("close");
+        }
+      }
+    });
+  });
+  
+}
+
+function random(min, max){
+  return Math.floor((Math.random()*(max - min))+min);
+}
+  </script>
+  <!-- STYLE CSS  -->
+  <style>
+    body {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  height: 100vh;
+}
+.deposit {
+  display: flex;
+}
+.deposit button {
+  height: 32px;
+}
+* {
+  box-sizing: border-box;
+}
+.wallet {
+  padding-right:10px ;
+  margin-bottom: auto;
+  margin-top: auto;
+  border-radius: 5px;
+}
+.wallet .text {
+  padding-right:10px ;
+  margin-bottom: auto;
+  margin-top: auto;
+  border-radius: 5px;
+}
+.wallet .text h1 {
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+.header-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid red;
+  border-radius: 3px;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 0.8rem #df0707,
+  inset 0 0 1.3rem #df0707; 
+  color: white;
+}
+/* rgb(5, 199, 5) */
+
+.header-top-bar ul {
+  display: flex;
+  list-style: none;
+}
+.header-top-bar ul li {
+  padding: 20px;
+}
+.header-top-bar h1 {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 13%;
+  font-size: 30px;
+}
+
+.header-top-bar h2 {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 3%;
+  font-size: 30px;
+}
+
+.header-top-bar h3 {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 3%;
+  font-size: 30px;
+}
+
+.header-top-bar .wallet {
+  text-align: right;
+}
+
+.header-top-bar .wallet h1 {
+  margin-top: auto;
+  margin-bottom: auto;
+
+
+  font-size: 15px;
+}
+
+.header-top-bar .wallet h2 {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 3%;
+  font-size: 20px;
+}
+.header-top-bar .wallet .deposit button {
+  background:rgb(59, 40, 40);
+  color: white;
+  border: 2px solid rgb(5, 199, 5);
+  border-radius: 3px;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 0.8rem rgb(5, 199, 5),
+  inset 0 0 1.3rem rgb(5, 199, 5); 
+}
+#cardListt {
+  height: 100px;
+  width: 800px;
+  position: relative;
+  border: 2px solid rgb(5, 199, 5);
+  overflow: hidden;
+  white-space: nowrap;
+  border: 2px solid rgb(5, 199, 5);
+  border-radius: 3px;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 0.8rem rgb(5, 199, 5),
+  inset 0 0 1.3rem rgb(5, 199, 5); 
+  margin-top: 20px;
+}
+
+.col-md-2 img {
+  max-width: 50%;
+}
+
+.col-md-2 {
+  display: flex;
+  justify-content: center;
+}
+
+.col-md-2 .text {
+  margin-top: auto;
+  color: white;
+  font-size: 1px;
+  text-align: right;
+}
+
+.cardd {
+  display: inline-block;
+  background-color: red;
+  text-align: center;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  width: 100px;
+  height: 100px;
+}
+
+.cardd > img {
+  width: 100px;
+  height: 100px;
+}
+
+.arrow-downn {
+  margin-left: 380px;
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  
+  border-top: 20px solid red;
+}
+#dialog {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  color: white;
+}
+.ui-dialog-titlebar.ui-corner-all.ui-widget-header.ui-helper-clearfix {
+  color: rgb(255, 255, 255);
+  background-color: red;
+}
+#ui-id-1.ui-dialog-title {
+  background-color: black;
+}
+#dialog-msg > img {
+  width: 150px;
+  height: 150px;
+}
+#dialog-msg {
+  text-align: center;
+}
+.box-centerr {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.openn {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+.openn button {
+  background:rgb(59, 40, 40);
+  padding: 10px;
+  width: 10rem;
+  border: 2px solid rgb(5, 199, 5);
+  border-radius: 3px;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 0.8rem rgb(5, 199, 5),
+  inset 0 0 1.3rem rgb(5, 199, 5); 
+  color: white;
+}
+.openn button:hover {
+  background:rgb(59, 40, 40);
+  padding: 10px;
+  width: 10rem;
+  border-radius: 5px;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem rgb(5, 199, 5),
+  0 0 0.8rem rgb(5, 199, 5),
+  0 0 2.8rem rgb(5, 199, 5),
+  0 0 3.8rem rgb(5, 199, 5),
+  0 0 0.5rem rgb(5, 199, 5),
+  inset 0 0 1.3rem rgb(5, 199, 5);
+  transition: 1s;
+}
+
+.row {
+  --bs-gutter-x: 0rem;
+}
+
+[class*=col] {
+  padding: 1rem;
+  margin: 10px;
+  border: 2px solid red;
+  border-radius: 3px;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 0.8rem #df0707,
+  inset 0 0 1.3rem #df0707; 
+}
+  </style>
+  <!-- window.css  -->
+  <style>
+    #dialog {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    color: white;
+  }
+  .ui-dialog-titlebar.ui-corner-all.ui-widget-header.ui-helper-clearfix {
+    color: rgb(255, 255, 255);
+    background-color: red;
+  }
+  .ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix {
+    background-color: #090a0f;
+  }
+  .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons.ui-resizable {
+    background-color: #090a0f;
+  }
+  .ui-dialog-titlebar.ui-corner-all.ui-widget-header.ui-helper-clearfix {
+    background-color: #090a0f;
+    padding: 0;
+    text-align: center;
+  }
+  .ui-widget-content {
+    border: 0;
+  }
+  .ui-dialog-titlebar.ui-corner-all.ui-widget-header.ui-helper-clearfix {
+    border: 0;
+  }
+  .ui-widget.ui-widget-content {
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #df0707,
+    0 0 0.8rem #df0707,
+    0 0 2.8rem #df0707,
+    inset 0 0 1.3rem #df0707; 
+  }
+  [type=button] {
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #df0707,
+    0 0 0.8rem #df0707,
+    0 0 2.8rem #df0707,
+    inset 0 0 1.3rem #df0707;
+    background-color: rgb(59,40,40); 
+  }
+  .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons.ui-resizable {
+    overflow: hidden;
+  }
+  .ui-dialog-titlebar-close {
+    background-color: #df0707;
+    display: none;
+  }
+  #ui-id-1.ui-dialog-title {
+    background-color: black;
+  }
+  </style>
+<div class="header-top-bar">
+  <img src="https://github.com/JakubKlodnicki/Casino-of-Emeralds/blob/main/img/logo/logo-emerald-white.png?raw=true" alt="" style="max-width: 10%; float: left;">
+  <ul>
+    <li><h1>Home</h1>
+    <li><h3>Profile</h3></li>
+     <li><h2>Clicker</h2></li>
+  </ul>
+</div>
+<div class="box-centerr">
+  <div id=unbox-area>
+    <div class="arrow-downn"></div>
+    <div id=cardListt></div>
+  </div>
+</div>
+<div class="row">
+<div class="openn">
+  <button onclick="openCase()">Open (cost: 100) </button>
+</div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-2">
+    <img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-KmcjgOrzUhFRe-sR_jez--YXygECLpxIuNDztII_Bd1doM16E_Qe_xr29hcS_tJmbnHNnuyZz7HrenB2zgBlLarQ8gOveFwvcAFHlzA/360fx360f">
+    <div class="text">
+      <h1 style="font-size: 17px;">Price: 500</h1>
+      <h2 style="font-size: 17px;">Chance: 100%</h2>
+      <h3 style="font-size: 15px;">M9 Bayonet | Tiger Tooth</h3>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf0ebcZThQ6tCvq4GGqPP7I6vdk3lu-M1wmeySyoD8j1yglB89IT6mOo_GIQ82NFjS_1nol-ftg57pupqbmCAy7iUisXbYlxK-iU1IOuJuhaGACQLJIyTq34k/360fx360f"/>
+    <div class="text">
+      <h1 style="font-size: 17px;">Price: 350</h1>
+      <h2 style="font-size: 17px;">Chance: 100%</h2>
+      <h3 style="font-size: 16px;">Butterfly Knife | Doppler</h3>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJfwPjNfThW49KJlY20jfL2IbrummJW4NFOhujT8om73wO2r0tuYD37ctKVJwQ_MgrQ-FLrxuy705butZ2YmCZhvSci7XrZywv330_lrW6K0g/360fx360f"/>
+    <div class="text">
+      <h1 style="font-size: 17px;">Price: 250</h1>
+      <h2 style="font-size: 17px;">Chance: 100%</h2>
+      <h3 style="font-size: 16px;">Skeleton Knife | Slaughter</h3>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwW09Kzm7-FmP7mDLfYkWNF18lwmO7Eu46l21aw_UpsYTrycIGUdldoYQqE_la3xLq80J7pupjKnSZiuHRxtnbD30vgpp1SOH0/360fx360f"/>
+    <div class="text">
+      <h1 style="font-size: 17px;">Price: 175</h1>
+      <h2 style="font-size: 17px;">Chance: 100%</h2>
+      <h3 style="font-size: 17px;">M4A4 | Neo-Noir</h3>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alDLPIhm5D18d0i_rVyoD8j1yglB89IT6mOoWUegM-aFvX_Fe_yO3q1Ja6vsnMn3Q163YntH6Lnxfh1UpFbrdng_SACQLJQIlmyYc/360fx360f"/>
+    <div class="text">
+      <h1 style="font-size: 17px;">Price: 150</h1>
+      <h2 style="font-size: 17px;">Chance: 100%</h2>
+      <h3 style="font-size: 17px;">M4A1-S | Hyper Beast</h3>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-2">
+    <img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79fnzL-cluX5MrLVk2Vu5Mx2gv3--Y3nj1H6r0plMm-lcNSRIQc6Z1GE-1e6wObt1JG46cmbmHo37yAn4HjfmUTmhAYMMLKVxXRrDQ/360fx360f"/>
+    <div class="text">
+      <h1 style="font-size: 17px;">Price: 125</h1>
+      <h2 style="font-size: 17px;">Chance: 100%</h2>
+      <h3 style="font-size: 17px;">Glock-18 | Bullet Queen</h3>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV08u_mpSOhcjnI7TDglRd4cJ5ntbN9J7yjRrj80Y9Y2GicdXBew84NQuGrAK4l-3nhpG_6smaznFlsyd343_czhPmn1gSOaDw15cN/360fx360f"/>
+    <div class="text">
+      <h1 style="font-size: 17px;">Price: 100</h1>
+      <h2 style="font-size: 17px;">Chance: 100%</h2>
+      <h3 style="font-size: 17px;">AK-47 | Frontside Misty</h3>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAZt7PLfYQJS7cumlZe0m_7zO6_ummpD78A_2u_HpN2giwfl-ENrMDrwJYSXdwU4MlzUq1jvlLjo0JC4vprOnSFisz5iuygXqnotbQ/360fx360f"/>
+    <div class="text">
+      <h1 style="font-size: 17px;">Price: 75</h1>
+      <h2 style="font-size: 17px;">Chance: 100%</h2>
+      <h3 style="font-size: 20px;">AWP | PAW</h3>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7ODHTjNL69Siq4yCkP_gDLfQhGxUppMlj7qQoNmg2wHj8xVvMGGhcIadIQ84Z1rSrAK8ku3r0ZPtu5XAmyN9-n515U3JtjU/360fx360f"/>
+    <div class="text">
+      <h1 style="font-size: 17px;">Price: 50</h1>
+      <h2 style="font-size: 17px;">Chance: 100%</h2>
+      <h3 style="font-size: 17px;">Desert Eagle | Night</h3>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <img src="https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh-TLMbfEk3tD4ctlteXI8oTht1i1uRQ5fTz3JY-Qcg82MwrTq1C-xLvpgJK56J7LmnY3vSIq7XeLmRK000xLaORxxavJqBhIHi8/360fx360f"/>
+    <div class="text">
+      <h1 style="font-size: 17px;">Price: 25</h1>
+      <h2 style="font-size: 17px;">Chance: 100%</h2>
+      <h3 style="font-size: 17px;">USP-S | Blueprint</h3>
+    </div>
+  </div>
+</div>
+<div id=dialog>
+  <div id=dialog-msg></div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
