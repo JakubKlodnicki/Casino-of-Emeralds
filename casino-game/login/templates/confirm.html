@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Page</title>
+</head>
+<body>
+    <form action="/confirm" method="POST">
+        <p>Enter Code</p>
+        <p><input type="text" name="code" /></p>
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+    <button><a href="/register">Register</a></button>
+    {% if session['aaa'] != '' %}
+    <h1 style="color: red">Incorrect code</h1>
+    {% endif %}
+    
+</body>
+</html>
